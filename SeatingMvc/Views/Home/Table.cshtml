@@ -1,0 +1,49 @@
+﻿@model IEnumerable <SeatingMvc.Components.Data.Table>
+
+@{
+    ViewBag.Title = "Table";
+}
+
+<h2>Table</h2>
+
+<p>
+    @using (Html.BeginForm("Table", "Home", FormMethod.Post))
+    {
+        @Html.TextBox("Search")
+        <input type="submit" value="Seerch"/>
+    }
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TableNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfSeats)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TableNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfSeats)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>Total Table Returned: @Model.Count()</p>
+
