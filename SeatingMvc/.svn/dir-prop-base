@@ -1,0 +1,9 @@
+K 18
+svn:global-ignores
+V 38
+bin
+Models
+obj
+SeatingMvc.csproj.user
+
+END

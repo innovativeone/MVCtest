@@ -1,0 +1,34 @@
+﻿@model SeatingMvc.Components.Data.Tables
+@{
+    ViewBag.Title = "AddPerson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddPerson To Table</h2>
+
+<table>
+    <tr>
+        <th>
+            Select table
+        </th>
+        <th>
+            Select Person
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+
+    <tr>
+        <th>
+            @Html.DropDownListFor(model => model.TableId, new SelectList(ViewBag.Listofperson, "PersonId", "FirstName"))
+
+
+        </th>
+        <th>
+            
+        </th>
+        <th>
+            
+        </th>
+    </tr>

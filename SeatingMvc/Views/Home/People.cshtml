@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SeatingMvc.Components.Data.Person>
+
+@{
+    ViewBag.Title = "People";
+}
+
+<h2>People</h2>
+
+<p>
+    Fine all people whose first or last name contains the search term, case insensitive<br />
+    @using (Html.BeginForm("People", "Home", FormMethod.Post))
+    {
+        @Html.TextBox("Search")
+        <input type="submit" value="Seerch"/>
+    }
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>Total People Returned: @Model.Count()</p>
+

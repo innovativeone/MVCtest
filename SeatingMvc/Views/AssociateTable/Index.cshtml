@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SeatingMvc.Components.Data.Table>
+
+
+@{
+    ViewBag.Title = "Table";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    List of all Tables with its maximum capacity<br />
+   
+</p>
+
+
+
+<table>
+    <tr>
+        <th>
+            Table Number
+        </th>
+        <th>
+            Table Title
+        </th>
+        <th>
+           Seating Capacity
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TableNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfSeats)
+            </td>
+        </tr>
+    }
+
+</table>
+
+

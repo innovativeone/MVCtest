@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Verndale MVC Advanced Dev Test";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title:</h1>
+                <h2>Intended for Senior Engineering/Tech Lead candidates who have experience with ASP.net MVC 3/4</h2>
+                <p>
+                    <strong>Improve</strong> the existing code in any way that you see fit.<br />
+                    <strong>Show off</strong> your excellent coding habits and attention to detail.<br />
+                    <strong>Blow us away</strong> with your ingenuity.<br />
+                </p>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>Instructions:</h3>
+<ul>
+    <li>Perform as many of the following goals as possible. Time limit: 90 minutes from the time that you have the solution up and running.</li>
+    <li>You can use the Internet as a reference (as long as you give proper credit where necessary and can explain the function of all code used)</li>
+    <li>Feel free to make any changes to the solution architecture, database tables, etc, as are needed in fulfilling the goals</li>
+    <li>It is ok if you do not finish all of the goals below - please be prepared to explain all design decisions</li>
+    <li>Beyond meeting the goals listed below, implementation is up to you</li>
+    <li>Make sure that you don't break anything that is currently working.</li> 
+    <li>
+        If you see anything included right now that is not working properly, fix it. 
+        Note: there <strong>are</strong> some items in the code right now that do not work properly or could use improvement. Anything is fare game for refactoring or fixing (inclooding speling).
+    </li>
+</ul>
+
+<h3>Goals:</h3> 
+<ol>
+    <li>The /App_Data/Database.mdf file contains one table that is prepopulated with a list of @Html.ActionLink("People Action", "People", "Home"). 
+        Provide a way to associate each Person with a table in the [Table] table in the Database (can be on an existing page or in a new page). [Table].[NumberSeats] is the maximum number
+        of people who can be seated at the table. Validate that this limit is followed.</li>
+    <li>Allow the user to filter the list of People to show:
+        <ul>
+            <li>All People/Only people with no tables assigned</li>
+            <li>By Gender</li>
+            <li>By Age Range</li>
+        </ul>
+    </li>
+    <li>Add a new Controller called Tables with an Index Action (link in the header nav) that will list out all of the tables, along with the names of the people seated at each table.</li>
+    <li>Provide a way to remove a person from a table</li>
+    <li>Change the routing to the @Html.ActionLink("People Action", "People", "Home") in the Home Controller so that it can be accessed as "/People/" from the root of the application, and not as "/Home/People".</li>
+
+</ol>
