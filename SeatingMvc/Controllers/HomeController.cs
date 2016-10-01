@@ -32,5 +32,12 @@ namespace SeatingMvc.Controllers
             return View(people);
         }
 
+        public ActionResult Table()
+        {
+            var db = Connectivity.GetSeatingEntities();
+            var table = db.Tables.ToList();
+            table = table.Where(x => true).ToList();
+            return View(table);
+        }
     }
 }
